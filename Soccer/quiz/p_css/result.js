@@ -117,14 +117,6 @@ window.addEventListener('DOMContentLoaded', function () {
                     message.innerText = 'おめでとう！！';
                     characterIcon[2].classList.add('sqr_showMascotIcon');
                 }
-            }).then(function () {
-                // データベースの削除
-                db.delete().then(function() {
-                    console.log('データベースの削除成功');
-                }).catch(function (error) {
-                    console.log('データベースの削除失敗');
-                    console.log(error);
-                });
             });
         });
     });
