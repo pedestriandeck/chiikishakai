@@ -1,0 +1,82 @@
+/* ホーム画面 */
+/* アイコン */
+main {
+    position: relative;
+}
+
+.sqh_headerIconArea {
+    flex-shrink: 0;
+    width: 60px;
+    height: 48px;
+}
+
+.sqh_headerIconArea>img {
+    flex-shrink: unset;
+    transition: transform 0.4s;
+}
+
+.sqh_ball_big {
+    transform: scale(2.0);
+    transition: transform 0.4s;
+}
+
+/* .sqh_iconArea {
+    height: 100%;
+} */
+
+.sqh_laurelIcon {
+    display: block;
+    position: absolute;
+    top: 72px;
+    left: calc((100% - 300px) / 2);
+    width: 300px;
+    height: 300px;
+}
+
+.sqh_usakameIcon {
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    left: calc((100% - 240px) / 2);
+    width: 240px;
+    height: 240px;
+}
+
+/* ログインボタン */
+.sqh_loginBtn {
+    display: block;
+    position: absolute;
+    bottom: 64px;
+    left: calc((100% - 240px) / 2);
+    width: 240px;
+    padding: 20px 16px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #EC686F, #DE4E55, #D3373F, #C9242C, #D3373F, #DE4E55, #EC686F);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: all 1s;
+}
+
+.sqh_typo_btn {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #FAC002;
+    text-align: center;
+}
+
+.sqh_blink {
+    opacity: 0.3;
+}
+
+/* シークレット */
+.sqh_secretArea {
+    display: none;
+}
+
+.sqh_hide {
+    display: none;
+}
+
+.sqh_show {
+    display: block;
+}

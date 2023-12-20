@@ -1,0 +1,380 @@
+/* ログイン画面 */
+/* フォント設定 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Noto+Sans+JP:wght@100;400&family=Permanent+Marker&display=swap');
+
+/* レイアウト */
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", "Meiryo", "ＭＳ　Ｐゴシック", "HelveticaNeue", "Helvetica", "Arial", Sans-Serif;
+}
+
+/* ヘッダー */
+header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 12px 48px 12px 20px;
+    background-color: #00A08E;
+}
+
+.sqc_headerIcon {
+    flex-shrink: 0;
+    display: block;
+    width: 60px;
+    height: 48px;
+    z-index: 1;
+}
+
+.sqc_headerText {
+    flex-grow: 1;
+    padding-left: 16px;
+}
+
+.sqc_typo_header {
+    font-family: 'Acme', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+    -webkit-text-stroke: 1px #585858;
+}
+
+/* メイン */
+main {
+    flex-grow: 1;
+    background-image: url("../p_img/soccer_ground.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main:has(.sqc_whiteCover) {
+    position: relative;
+}
+
+.sqc_whiteCover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* フッター */
+footer {
+    flex-shrink: 0;
+    padding: 12px 20px;
+    background-color: #00A08E;
+}
+
+.sqc_typo_footer {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* アイコン移動 */
+.sqc_moveIcon {
+    position: relative;
+}
+
+.sqc_moveIcon_icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* プログレスバー */
+.sqc_progressBar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.sqc_progressBar_circle {
+    border-radius: 50%;
+    background-color: #FABF00;
+}
+
+.sqc_progressBar_big {
+    width: 24px;
+    height: 24px;
+}
+
+.sqc_progressBar_small {
+    width: 16px;
+    height: 16px;
+}
+
+.sqc_progressBar_bar {
+    width: calc((100% - 24px * 4 - 16px * 6) / 8);
+    height: 4px;
+    background-color: #FABF00;
+}
+
+.sqc_progressBar_big:has(.sqc_progressBar_typo_number) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sqc_progressBar_typo_number {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #2E2E2E;
+}
+
+.sqc_progressBar_active {
+    background-color: #FABF00;
+}
+
+.sqc_progressBar_active~.sqc_progressBar_bar {
+    background-color: #F0F0F0;
+}
+
+.sqc_progressBar_active~.sqc_progressBar_bar+.sqc_progressBar_circle {
+    background-color: #D5D5D5;
+}
+
+/* ローダー */
+body:has(.sqc_loader) {
+    position: relative;
+}
+
+.sqc_loader {
+    position: absolute;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: #008673;
+    z-index: 9999;
+}
+
+.sqc_loader_hidden {
+    display: none;
+}
+
+.sqc_loader_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.sqc_loader_wrapper {
+    position: relative;
+    width: 200px;
+    height: 120px;
+}
+
+.sqc_loader_circle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    left: 15%;
+    transform-origin: 50%;
+    animation: circle .5s alternate infinite ease;
+}
+
+@keyframes circle {
+    0% {
+        top: 60px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+    }
+
+    40% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+.sqc_loader_circle:nth-child(2) {
+    left: 45%;
+    animation-delay: .2s;
+}
+
+.sqc_loader_circle:nth-child(3) {
+    left: auto;
+    right: 15%;
+    animation-delay: .3s;
+}
+
+.sqc_loader_shadow {
+    width: 20px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 62px;
+    transform-origin: 50%;
+    z-index: -1;
+    left: 15%;
+    filter: blur(1px);
+    animation: shadow .5s alternate infinite ease;
+}
+
+@keyframes shadow {
+    0% {
+        transform: scaleX(1.5);
+    }
+
+    40% {
+        transform: scaleX(1);
+        opacity: .7;
+    }
+
+    100% {
+        transform: scaleX(.2);
+        opacity: .4;
+    }
+}
+
+.sqc_loader_shadow:nth-child(4) {
+    left: 45%;
+    animation-delay: .2s
+}
+
+.sqc_loader_shadow:nth-child(5) {
+    left: auto;
+    right: 15%;
+    animation-delay: .3s;
+}
+
+.sqc_typo_loaderTitle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 16px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* コンポーネント：ダイアログ */
+.sqc_dialog {
+    display: flex;
+}
+
+/* bodyスクロール制御 */
+.sqc_dialog_bodyScroll {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    position: fixed;
+    left: 0;
+}
+
+.sqc_dialog_showModal {
+    cursor: pointer;
+}
+
+/* ダイアログ背景 */
+.sqc_dialog_modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s cubic-bezier(0, 0.2, 0.4, 1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.sqc_dialog_inner {
+    background-color: #FFF9E5;
+    border-radius: 24px;
+    /* スクロールの調整のため右・下paddingをc_modal01_textAreaと分割 */
+    padding: 32px 12px 30px 0;
+    width: 90vw;
+    max-width: 592px;
+    min-width: 328px;
+    max-height: 90%;
+    position: relative;
+    cursor: default;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* PC表示 */
+@media (min-width: 760px) {
+    .sqc_dialog_inner {
+        max-height: 680px;
+    }
+}
+
+/* ダイアログテキストエリア */
+.sqc_dialog_textArea {
+    overflow-y: auto;
+    overflow-x: hidden;
+    line-height: 1.5;
+    /*モーダル内スクロールの調整のため右・下paddingをc_modal01_innerと分割 */
+    padding: 0 12px 2px 24px;
+}
+
+/* PC表示 */
+@media (min-width: 760px) {
+    .sqc_dialog_textArea {
+        /* ダイアログボックスの最大の高さ（680px）からパディング要素（64px）を引いた値 */
+        max-height: 616px;
+    }
+}
+
+/* 閉じるアイコン（×ボタン） */
+.sqc_dialog_CloseBtn {
+    position: absolute;
+    right: -16px;
+    top: -24px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+/* ダイアログ表示用クラス */
+.sqc_dialog_isShow {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ×ボタンクローズ非表示用クラス */
+.sqc_dialog_hidden_closeBtn .sqc_dialog_CloseBtn {
+    display: none;
+}
+
+/* 背景押下制御用クラス */
+.sqc_dialog .sqc_dialog_modal_disable {
+    cursor: default;
+}

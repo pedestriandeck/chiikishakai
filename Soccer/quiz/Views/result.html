@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="icon" href="../p_img/favicon.ico?20230907" sizes="any">
+    <link rel="apple-touch-icon" href="../p_img/soccerball_03.png?20230907">
+    <title>kizunaサッカークイズ | 結果</title>
+    <link rel="stylesheet" href="../p_css/reset.css?20230907">
+    <link rel="stylesheet" href="../p_css/common.css?20230907">
+    <link rel="stylesheet" href="../p_css/result.css?20230907">
+</head>
+
+<body>
+    <!-- ローダー -->
+    <div class="sqc_loader">
+        <div class="sqc_loader_center">
+            <div class="sqc_loader_wrapper">
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_shadow"></div>
+                <div class="sqc_loader_shadow"></div>
+                <div class="sqc_loader_shadow"></div>
+                <p class="sqc_typo_loaderTitle">Loading</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header>
+        <img class="sqc_headerIcon" src="../p_img/soccerball_header.png?20230907">
+        <div class="sqc_headerText">
+            <p class="sqc_typo_header">Soccer Quiz</p>
+        </div>
+    </header>
+
+    <!-- メイン -->
+    <main>
+        <div class="sqr_whiteCover">
+            <p id="sqr_message" class="spr_typo_message"></p>
+            <div class="sqr_iconArea">
+                <img src="../p_img/usarin01.svg?20230907" class="sqr_charactorIcon">
+                <img src="../p_img/usakame02.svg?20230907" class="sqr_charactorIcon">
+                <img src="../p_img/usakame03.svg?20230907" class="sqr_charactorIcon">
+            </div>
+            <div class="sqr_judgmentArea">
+                <div class="sqr_tableFrame">
+                    <p class="sqr_typo_numOfCorrects">10問中<span id="sqr_numOfCorrects"></span>問正解</p>
+                    <!-- アドバイスエリア -->
+                    <div class="sqr_adviceArea">
+                        <p class="sqr_typo_advice">&#9675;&#10005;アイコンを押して選択肢を再確認しよう！</p>
+                    </div>
+                    <!-- テーブルエリア -->
+                    <div class="sqr_tableArea">
+                        <div class="sqr_judgementTable">
+                            <ul>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文1</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文2</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文3</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文4</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文5</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文6</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文7</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文8</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文9</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sqr_tableNumArea">
+                                        <p class="sqr_typo_tableNum">
+                                            Q<span class="sqr_quizNum"></span>
+                                        </p>
+                                    </div>
+                                    <div class="sqr_tableJudgeArea">
+                                        <div class="sqc_dialog">
+                                            <div class="sqc_dialog_showModal">
+                                                <div class="sqr_judgementIconUnderbar">
+                                                    <svg version="1.1" class="sqr_correctIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <svg version="1.1" class="sqr_incorrectIcon"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 512 512" xml:space="preserve">
+                                                        <g>
+                                                            <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	" style="fill: #2E2E2E;">
+                                                            </polygon>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="sqc_dialog_modal sqc_dialog_modal_disable">
+                                                <div class="sqc_dialog_inner">
+                                                    <div class="sqc_dialog_CloseBtn">
+                                                        <svg width="48" height="48" viewbox="0 0 48 48" fill="none">
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <circle cx="24" cy="24" r="20" fill="#FABF00"></circle>
+                                                            <path d="M16 16L32 32" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                            <path d="M16 32L32 16" stroke="#2E2E2E" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="sqc_dialog_textArea">
+                                                        <div class="sqr_statementArea">
+                                                            <div class="sqr_numberArea">
+                                                                <p class="sqr_typo_number">
+                                                                    Q<span class="sqr_quizNum"></span>
+                                                                </p>
+                                                            </div>
+                                                            <div class="sqr_statement">
+                                                                <p class="sqr_typo_statement">
+                                                                    問題文10</p>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="sqr_optionArea">
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢1</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢2</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option">
+                                                                    <p class="sqr_typo_optionText">選択肢3</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="sqr_option sqr_yourChoice">
+                                                                    <p class="sqr_typo_optionText">選択肢4</p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ランキングエリア -->
+                    <!-- <div class="sqr_rankingArea">
+                        <p class="sql_typo_rankText">あなたの順位は</p>
+                        <div class="sqr_rankTextSpace">
+                            <p class="sql_typo_rankNum"></p>
+                        </div>
+                        <div class="sqr_rankTextSpace">
+                            <p class="sql_typo_rankText">/</p>
+                        </div>
+                        <div class="sqr_rankTextSpace">
+                            <p class="sql_typo_rankNum">999</p>
+                        </div>
+                        <div class="sqr_rankTextSpace">
+                            <p class="sql_typo_rankText">位</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <p class="sqc_typo_footer">&copy; 2023 Kizuna with Local Society Communities Team<br> of Digital Strategy Department
+            v1.1</p>
+    </footer>
+
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="../p_css/common.js?20230907"></script>
+    <script src="../p_css/result.js?20230907"></script>
+</body>
+
+</html>

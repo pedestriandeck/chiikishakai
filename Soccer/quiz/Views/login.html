@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="icon" href="../p_img/favicon.ico?20230907" sizes="any">
+    <link rel="apple-touch-icon" href="../p_img/soccerball_03.png?20230907">
+    <title>kizunaサッカークイズ | ログイン</title>
+    <link rel="stylesheet" href="../p_css/reset.css?20230907">
+    <link rel="stylesheet" href="../p_css/common.css?20230907">
+    <link rel="stylesheet" href="../p_css/login.css?20230907">
+</head>
+
+<body>
+    <!-- ローダー -->
+    <div class="sqc_loader">
+        <div class="sqc_loader_center">
+            <div class="sqc_loader_wrapper">
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_shadow"></div>
+                <div class="sqc_loader_shadow"></div>
+                <div class="sqc_loader_shadow"></div>
+                <p class="sqc_typo_loaderTitle">Loading</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header>
+        <img class="sqc_headerIcon" src="../p_img/soccerball_header.png?20230907">
+        <div class="sqc_headerText">
+            <p class="sqc_typo_header">Soccer Quiz</p>
+        </div>
+    </header>
+
+    <!-- メイン -->
+    <main class="sqc_main">
+        <!-- メインマスク -->
+        <div class="sql_mainMask">
+            <!-- ログインフォームセクション -->
+            <section class="sql_loginArea">
+                <!-- ログインフォーム -->
+                <div class="sql_loginFrame">
+                    <!-- タイトル -->
+                    <p class="sql_typo_loginFormTitle">職員ID・LCコードを入力してください</p>
+                    <!-- テキストフィールド -->
+                    <div class="sql_textFieldArea">
+                        <label class="sql_textFieldLabel">
+                            <input type="text" maxlength="10" placeholder="職員ID（A・G6桁） or LCコード10桁を入力" autocomplete="username" id="sql_textFieldInput"
+                                class="sql_textFieldInput sql_typo_textFieldInput">
+                        </label>
+                    </div>
+                    <!-- ボタン -->
+                    <div class="sql_loginBtnArea">
+                        <button id="sql_loginBtn" class="sql_loginBtn">
+                            <p class="sql_typo_loginBtn">クイズ開始！</p>
+                        </button>
+                    </div>
+                </div>
+                <!-- エラーメッセージ -->
+                <div class="sql_errMessageArea">
+                    <div id="sql_errMessage" class="sql_errMessage">
+                        <div class="sql_errMessageTitle">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="4" width="16" height="16" rx="8" fill="#EF0B0B" />
+                                <path
+                                    d="M11.9945 17C12.5628 17 13 16.5625 13 16C13 15.4271 12.5628 15 11.9945 15C11.4262 15 11 15.4271 11 16C11 16.5625 11.4262 17 11.9945 17Z"
+                                    fill="white" />
+                                <path
+                                    d="M12.9324 8.91535L12.6848 13.3524C12.6645 13.7157 12.3639 14 12 14C11.6361 14 11.3355 13.7157 11.3152 13.3524L11.0676 8.91535L11.0353 7.99938C11.016 7.45323 11.4535 7 12 7C12.5465 7 12.984 7.45323 12.9647 7.99938L12.9324 8.91535Z"
+                                    fill="white" />
+                            </svg>
+                            <div class="sql_errMessageTitleText">
+                                <p class="sql_typo_errMessageTitle">正しい値を入力してください。</p>
+                            </div>
+                        </div>
+                        <div class="sql_errMessageContent">
+                            <p class="sql_typo_errMessage">職員は職員コード（例：A123456）<br>LCは10桁コード（例：1234567890）</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <p class="sqc_typo_footer">&copy; 2023 Kizuna with Local Society Communities Team<br> of Digital Strategy Department
+            v1.1</p>
+    </footer>
+
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="../p_css/common.js?20230907"></script>
+    <script src="../p_css/login.js?20230907"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="icon" href="../p_img/favicon.ico?20230907" sizes="any">
+    <link rel="apple-touch-icon" href="../p_img/soccerball_03.png?20230907">
+    <title>kizunaサッカークイズ | ホーム</title>
+    <link rel="stylesheet" href="../p_css/reset.css?20230907">
+    <link rel="stylesheet" href="../p_css/common.css?20230907">
+    <link rel="stylesheet" href="../p_css/home.css?20230907">
+</head>
+
+<body>
+    <!-- ローダー -->
+    <div class="sqc_loader">
+        <div class="sqc_loader_center">
+            <div class="sqc_loader_wrapper">
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_shadow"></div>
+                <div class="sqc_loader_shadow"></div>
+                <div class="sqc_loader_shadow"></div>
+                <p class="sqc_typo_loaderTitle">Loading</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="sqc_moveIcon sqh_headerIconArea">
+            <img id="sqh_moveIcon" class="sqc_moveIcon_icon sqc_headerIcon"
+                src="../p_img/soccerball_header.png?20230907">
+        </div>
+        <div class="sqc_headerText">
+            <p class="sqc_typo_header">Soccer Quiz</p>
+        </div>
+    </header>
+
+    <!-- メイン -->
+    <main>
+        <section class="sqh_homeArea">
+            <!-- アイコンエリア -->
+            <div class="sqh_iconArea">
+                <!-- 月桂冠アイコン -->
+                <img src="../p_img/laurel_wreath.svg?20230907" class="sqh_laurelIcon">
+                <!-- うさかめアイコン -->
+                <img src="../p_img/usakame.svg?20230907" class="sqh_usakameIcon">
+            </div>
+
+            <!-- ログインボタン -->
+            <a href="./login.html" id="sqh_loginBtn" class="sqh_loginBtn">
+                <p class="sqh_typo_btn">ログイン画面へ</p>
+            </a>
+        </section>
+
+        <section class="sqh_secretArea">
+            <p>シークレットエリア</p>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>ログイン日時</th>
+                    <th>解答日時</th>
+                    <th>点数</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <p class="sqc_typo_footer">&copy; 2023 Kizuna with Local Society Communities Team<br> of Digital Strategy Department
+            v1.1</p>
+    </footer>
+
+    <script src="../p_css/common.js?20230907"></script>
+    <script src="../p_css/home.js?20230907"></script>
+</body>
+
+</html>

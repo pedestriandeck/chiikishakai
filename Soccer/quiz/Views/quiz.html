@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <meta http-equiv="Pragma" content="no-cache">
+    <link rel="icon" href="../p_img/favicon.ico?20230907" sizes="any">
+    <link rel="apple-touch-icon" href="../p_img/soccerball_03.png?20230907">
+    <title>kizunaサッカークイズ | クイズ</title>
+    <link rel="stylesheet" href="../p_css/reset.css?20230907">
+    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css?20230907" rel="stylesheet">
+    <link rel="stylesheet" href="../p_css/common.css?20230907">
+    <link rel="stylesheet" href="../p_css/quiz.css?20230907">
+</head>
+
+<body>
+    <!-- ローダー -->
+    <div class="sqc_loader">
+        <div class="sqc_loader_center">
+            <div class="sqc_loader_wrapper">
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_circle"></div>
+                <div class="sqc_loader_shadow"></div>
+                <div class="sqc_loader_shadow"></div>
+                <div class="sqc_loader_shadow"></div>
+                <p class="sqc_typo_loaderTitle">Loading</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header>
+        <img class="sqc_headerIcon" src="../p_img/soccerball_header.png?20230907">
+        <div class="sqc_headerText">
+            <p class="sqc_typo_header">Soccer Quiz</p>
+        </div>
+    </header>
+
+    <!-- メイン -->
+    <main>
+        <!-- メインマスク -->
+        <div class="sqc_mainMask">
+            <!-- プログレスバーセクション -->
+            <section class="sqq_progressBarArea">
+                <!-- プログレスバー -->
+                <ul class="sqc_progressBar">
+                    <li class="sqc_progressBar_circle sqc_progressBar_big sqc_progressBar_active">
+                        <p class="sqc_progressBar_typo_number">1</p>
+                    </li>
+                    <li class="sqc_progressBar_bar"></li>
+                    <li class="sqc_progressBar_circle sqc_progressBar_small"></li>
+                    <li class="sqc_progressBar_bar"></li>
+                    <li class="sqc_progressBar_circle sqc_progressBar_small"></li>
+                    <li class="sqc_progressBar_bar"></li>
+                    <li class="sqc_progressBar_circle sqc_progressBar_big"></li>
+                    <li class="sqc_progressBar_bar"></li>
+                    <li class="sqc_progressBar_circle sqc_progressBar_small"></li>
+                    <li class="sqc_progressBar_bar"></li>
+                    <li class="sqc_progressBar_circle sqc_progressBar_small"></li>
+                    <li class="sqc_progressBar_bar"></li>
+                    <li class="sqc_progressBar_circle sqc_progressBar_big"></li>
+                    <li class="sqc_progressBar_bar"></li>
+                    <li class="sqc_progressBar_circle sqc_progressBar_small"></li>
+                    <li class="sqc_progressBar_bar"></li>
+                    <li class="sqc_progressBar_circle sqc_progressBar_small"></li>
+                    <li class="sqc_progressBar_bar"></li>
+                    <li class="sqc_progressBar_circle sqc_progressBar_big">
+                        <p class="sqc_progressBar_typo_number">10</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="sqq_quizArea">
+                <div class="sqq_problemArea">
+                    <div class="sqq_statementArea">
+                        <div class="sqq_numberArea">
+                            <p class="sqq_numberTypo">Q<span id="QuizId"></span></p>
+                        </div>
+                        <div class="sqq_statement">
+                            <p class="sqq_statementTypo" id="Question"></p>
+                        </div>
+                    </div>
+                    <!-- <div class="sqq_pictureArea sqq_none">
+                        <img src="../p_img/soccerPic01.png" class="sqq_picture">
+                    </div> -->
+                    <div class="sqq_judgeArea">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve" id="correct"
+                            class="sqq_judgeSVG sqq_none">
+                            <g>
+                                <path class="st0" d="M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256
+                C512,114.625,397.375,0,256,0z M256,464c-114.688,0-208-93.313-208-208S141.313,48,256,48s208,93.313,208,208S370.688,464,256,464z
+                " style="fill: rgb(255, 51, 0);"></path>
+                            </g>
+                        </svg>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve" id="incorrect"
+                            class="sqq_judgeSVG sqq_none">
+                            <g>
+                                <polygon class="st0" points="512,52.535 459.467,0.002 256.002,203.462 52.538,0.002 0,52.535 203.47,256.005 0,459.465 
+                52.533,511.998 256.002,308.527 459.467,511.998 512,459.475 308.536,256.005 	"
+                                    style="fill: rgb(255, 51, 0);">
+                                </polygon>
+                            </g>
+                        </svg>
+                    </div>
+                    <ul class="sqq_choiceArea">
+                        <li>
+                            <div class="sqq_choiceBox">
+                                <input name="quiz" class="sqq_choiceBtn" id="1" value="1" type="radio"><label for="1">
+                                    <p id="Option1" class="sqq_choiceTypo"></p>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sqq_choiceBox">
+                                <input name="quiz" class="sqq_choiceBtn" id="2" value="2" type="radio"><label for="2">
+                                    <p id="Option2" class="sqq_choiceTypo"></p>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sqq_choiceBox">
+                                <input name="quiz" class="sqq_choiceBtn" id="3" value="3" type="radio"><label for="3">
+                                    <p id="Option3" class="sqq_choiceTypo"></p>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="sqq_choiceBox">
+                                <input name="quiz" class="sqq_choiceBtn" id="4" value="4" type="radio"><label for="4">
+                                    <p id="Option4" class="sqq_choiceTypo"></p>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <p class="sqc_typo_footer">&copy; 2023 Kizuna with Local Society Communities Team<br> of Digital Strategy Department
+            v1.1</p>
+    </footer>
+
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="../p_css/common.js?20230907"></script>
+    <script src="../p_css/quiz.js?20230907"></script>
+</body>
+
+</html>
