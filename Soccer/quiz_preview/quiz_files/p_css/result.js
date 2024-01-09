@@ -38,8 +38,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // ユーザテーブルの最後のレコードを取得
     userTable.orderBy('id').last(function (record) {
+        console.log(userTable)
         // 正解数の格納
-        point = record.Point;
+        point = record.Point + 5;
         // ログスプレッドシートのウェブアプリURLを設定
         const deployUrl = 'https://script.google.com/macros/s/AKfycbzqLAkVBukrQdFa2tf9WFT5W22I1HeXbTKzA0khm8vlKq3cJapjZickIyd7h4ogEn0lQw/exec';
         // リクエストの送信
@@ -62,6 +63,23 @@ window.addEventListener('DOMContentLoaded', function () {
                 option[(quiz.QuizId - 1) * 4 + (quiz.Answer - 1)].classList.add('sqr_correctOption');
                 // 正誤判定
                 if (record.Choice[quiz.QuizId - 1] == quiz.Answer) {
+                    console.log(record.Choice[quiz.QuizId - 1])
+                    // 正解の場合
+                    // 正解アイコンの表示
+                    correctIcon[quiz.QuizId - 1].classList.add('sqr_showJudgeIcon');
+                    // タグテキストの要素を生成
+                    const tagTypo = document.createElement('p');
+                    tagTypo.classList.add('sqr_typo_tag');
+                    // タグテキストの表示
+                    tagTypo.innerText = '正解　あなたの解答';
+                    // タグエリアの要素を生成
+                    const tagArea = document.createElement('div');
+                    tagArea.classList.add('sqr_tagArea');
+                    // タグテキストの要素をタグエリアの要素に追加
+                    tagArea.appendChild(tagTypo);
+                    // タグエリアの要素を選択肢の要素に追加
+                    option[(quiz.QuizId - 1) * 4 + (quiz.Answer - 1)].appendChild(tagArea);
+                } else if (record.Choice[quiz.QuizId - 1] == ''){
                     // 正解の場合
                     // 正解アイコンの表示
                     correctIcon[quiz.QuizId - 1].classList.add('sqr_showJudgeIcon');

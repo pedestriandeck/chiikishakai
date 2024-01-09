@@ -95,6 +95,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     choiceArea.classList.add('sqq_noClick');
                     selectValue = Number(this.value);
                     userChoice.push(selectValue);
+
                     // 正解の選択肢番号を格納
                     let answerNum = 0;
 
@@ -121,9 +122,8 @@ window.addEventListener('DOMContentLoaded', function () {
                         }
                     }).then(function () {
                         quizTable.where('QuizId').equals(quizNum + 1).first(function (record) {
-                            if (quizNum < 10) {
+                            if (quizNum < 2) {
                                 quizNum += 1;
-
                                 setTimeout(function () {
                                     // ○×アイコンを非表示に変更
                                     correctImg.classList.add('sqq_transmission');
@@ -155,6 +155,8 @@ window.addEventListener('DOMContentLoaded', function () {
                                     choiceArea.classList.remove('sqq_noClick');
                                 }, 1500);
                             } else {
+                                userChoice.push(2, 4, 4, 4, 4, 3, 2, 2);
+
                                 // 解答日時の取得
                                 const answerDate = changeDateFormat(new Date());
 
@@ -165,6 +167,7 @@ window.addEventListener('DOMContentLoaded', function () {
                                         Choice: userChoice,
                                         Point: point
                                     }).then(function () {
+
                                         // ログスプレッドシートのウェブアプリURLを設定
                                         const postUrl = 'https://script.google.com/macros/s/AKfycbzqLAkVBukrQdFa2tf9WFT5W22I1HeXbTKzA0khm8vlKq3cJapjZickIyd7h4ogEn0lQw/exec';
 
