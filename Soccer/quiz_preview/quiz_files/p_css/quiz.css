@@ -22,9 +22,22 @@
     padding: 24px 20px;
 }
 
+@media (min-width: 760px) {
+    .sqq_quizArea {
+        padding: 24px 0;
+    }
+}
+
 .sqq_problemArea {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 20px 12px;
+}
+
+@media (min-width: 760px) {
+    .sqq_problemArea {
+        max-width: 800px;
+        margin: 0 auto;
+    }
 }
 
 .sqq_numberArea {

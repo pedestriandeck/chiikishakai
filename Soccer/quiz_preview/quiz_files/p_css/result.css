@@ -8,6 +8,15 @@ main {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
+@media (min-width: 760px) {
+    .sqr_whiteCover {
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 16px;
+    }
+}
+
 .spr_typo_message {
     font-size: 20px;
     font-weight: 700;

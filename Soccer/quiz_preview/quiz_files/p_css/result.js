@@ -1,7 +1,4 @@
 /* 結果画面 */
-// 画面読み込み時にローディング非表示
-window.addEventListener('load', hideLoader);
-
 window.addEventListener('DOMContentLoaded', function () {
     // Dexie.jsのデータベースを作成
     const db = new Dexie('QuizAppDB');
@@ -79,7 +76,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     tagArea.appendChild(tagTypo);
                     // タグエリアの要素を選択肢の要素に追加
                     option[(quiz.QuizId - 1) * 4 + (quiz.Answer - 1)].appendChild(tagArea);
-                } else if (record.Choice[quiz.QuizId - 1] == ''){
+                } else if (record.Choice[quiz.QuizId - 1] == '') {
                     // 正解の場合
                     // 正解アイコンの表示
                     correctIcon[quiz.QuizId - 1].classList.add('sqr_showJudgeIcon');
@@ -135,6 +132,9 @@ window.addEventListener('DOMContentLoaded', function () {
                     message.innerText = 'おめでとう！！';
                     characterIcon[2].classList.add('sqr_showMascotIcon');
                 }
+            }).then(function () {
+                // ローディング非表示
+                hideLoader();
             });
         });
     });

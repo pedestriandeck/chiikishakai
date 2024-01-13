@@ -15,7 +15,15 @@ main {
     padding: 56px 20px 24px 20px;
 }
 
+@media (min-width: 760px) {
+    .sql_loginArea {
+        padding: 56px 0 24px;
+    }
+}
+
 .sql_loginFrame {
+    max-width: 400px;
+    margin: 0 auto;
     padding: 36px 24px;
     border-radius: 24px;
     background-color: #FFF9E5;
@@ -100,6 +108,11 @@ main {
 }
 
 /* エラーメッセージ */
+.sql_errMessageArea {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 .sql_errMessage {
     padding: 8px;
     border: 1px solid #EA3D3D;
