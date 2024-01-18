@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     tagArea.appendChild(tagTypo);
                     // タグエリアの要素を選択肢の要素に追加
                     option[(quiz.QuizId - 1) * 4 + (quiz.Answer - 1)].appendChild(tagArea);
-                } else if (record.Choice[quiz.QuizId - 1] == ''){
+                } else if (record.Choice[quiz.QuizId - 1] == '') {
                     // 正解の場合
                     // 正解アイコンの表示
                     correctIcon[quiz.QuizId - 1].classList.add('sqr_showJudgeIcon');
@@ -138,4 +138,157 @@ window.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    
 });
+
+
+// ポップアップ
+    // ダイアログ系共通
+    // bodyScroll設定
+    function setBodyScroll() {
+        // bodyタグにスクロール制御クラスが設定されている場合、先になんらかのダイアログが表示しているものとみなす
+        if (document.body.classList.contains("c_bodyScroll")) {
+            document.body.classList.add("c_bodyScroll_sec");
+        } else {
+            let rootfont = document.documentElement.style.fontSize.replace('px', '');
+            if (rootfont == '') {
+                rootfont = getComputedStyle(document.documentElement).fontSize.replace('px', '');
+            }
+            // 表示位置の指定用
+            document.body.style.top = '-' + window.pageYOffset / rootfont + 'rem';
+            document.body.classList.add("c_bodyScroll");
+        };
+    }
+
+    // bodyScroll解除
+    function clearBodyScroll() {
+        // c_bodyScroll_secがあったら既に別のダイアログが表示中のため、bodyscrollは削除しない
+        if (document.body.classList.contains("c_bodyScroll_sec")) {
+            document.body.classList.remove("c_bodyScroll_sec");
+        } else {
+            // 背景固定解除
+            document.body.classList.remove('c_bodyScroll');
+            scrollMove = document.body.style.getPropertyValue('top');
+            if (scrollMove != '') {
+                let rootfont = document.documentElement.style.fontSize.replace('px', '');
+                if (rootfont == '') {
+                    rootfont = getComputedStyle(document.documentElement).fontSize.replace('px', '');
+                }
+                scrollMove = scrollMove.replace('-', '');
+                scrollMove = scrollMove.replace('rem', '') * rootfont;
+                document.body.style.removeProperty('top');
+                // スクロール位置を戻す
+                window.scrollTo(0, scrollMove);
+            }
+        }
+    }
+
+    /* IE判定 */
+    function c_isbrowserIE() {
+        // IE固有の機能を持っている場合trueを返却
+        if (document.documentMode && document.uniqueID) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /** コンポーネント：Dialog **/
+    // フォントサイズ取り込み
+    if (!document.getElementsByClassName('c_modal01').length) {
+        //該当の要素がない場合は処理を行なわない
+    } else {
+
+        let rootfont = document.documentElement.style.fontSize.replace('px', '');
+        if (rootfont == '') {
+            rootfont = getComputedStyle(document.documentElement).fontSize.replace('px', '');
+        }
+
+        // ダイアログ表示処理
+        function showModalDialog01(targetDialogArea) {
+            // ダイアログウィンドウ表示
+            targetDialogArea.classList.add('c_modal01_isShow');
+            // 背景固定
+            setBodyScroll();
+            // 高さ設定
+            setMaxHeightModal01(targetDialogArea);
+        }
+
+        // ダイアログ非表示処理
+        function closeModalDialog01(targetDialogArea) {
+            // スクロール位置を戻すための処理 
+            clearBodyScroll();
+            // ダイアログウィンドウ非表示
+            targetDialogArea.classList.remove('c_modal01_isShow');
+        }
+
+        // ダイアログ表示時用 高さ設定処理
+        function setMaxHeightModal01(targetDialogArea) {
+            const modalMaxHeight = 56;
+            targetArea = targetDialogArea.getElementsByClassName('c_modal01_textArea')[0];
+            let dialogHeight;
+            // IEかどうかで取得元を変える
+            if (c_isbrowserIE()) {
+                dialogHeight = document.documentElement.clientHeight;
+            } else {
+                dialogHeight = window.innerHeight;
+            }
+            // iOSではheightがvhの場合、アドレスバーが表示エリアに含まれないためこちらでheightを指定
+            targetDialogArea.style.height = dialogHeight / rootfont + 'rem';
+            // textAreaも上記同様の理由でmax-heightを指定
+            // 本来は6.4remだがスクロールバーの表示調整でCSS側の「dialog_inner」の上下paddingが6.2remのため計算値もあわせる
+            targetArea.style.maxHeight = ((dialogHeight / rootfont * 0.9) - 6.2) + 'rem';
+            // ダイアログのダイアログボックスの高さは最大56rem
+            // ただし、ウィンドウの高さの90%が上記の高さより小さい場合は、
+            // ウィンドウの90%をダイアログボックスの高さとする
+            if (dialogHeight / rootfont * 0.9 < modalMaxHeight) {
+                // 90%未満のときは指定したmax-heightを使用
+            } else {
+                // CSSで指定したmax-heightとするため削除
+                targetArea.style.removeProperty('max-height');
+            }
+        }
+
+        // ページ表示時に各種イベント登録
+        window.addEventListener('DOMContentLoaded', function () {
+            // ダイアログウィンドウの表示制御 
+            const showModal = document.getElementsByClassName('c_modal01_showModal');
+            for (let i = 0; i < showModal.length; i++) {
+                // showModal[i].addEventListener('click', function () {
+                    showModalDialog01(showModal[i].nextElementSibling);
+                // });
+            }
+
+            // ダイアログウィンドウの非表示制御（×ボタン押下時）
+            const closeBtn = document.getElementsByClassName('c_modal01_CloseBtn');
+            for (let i = 0; i < closeBtn.length; i++) {
+                closeBtn[i].addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    closeModalDialog01(this.parentElement.parentElement);
+                });
+            }
+
+            // ダイアログウィンドウの非表示制御（背景押下時）
+            const closeModal = document.getElementsByClassName('c_modal01_modal');
+            for (let i = 0; i < closeModal.length; i++) {
+                closeModal[i].addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    // IEの場合、×ボタン押下時にdiv要素全体の押下イベントも実行されてしまうため×ボタン押下か否かを判定
+                    if (undefined != e.target.classList) {
+                        // 押下箇所が背景の場合 かつ 非活性制御がない場合はダイアログを閉じる
+                        if (e.target.classList.contains('c_modal01_modal') && !(e.target.classList.contains('c_modal01_modal_disable'))) {
+                            closeModalDialog01(this);
+                        }
+                    }
+                });
+            }
+
+            // リサイズ時 高さ再設定
+            window.addEventListener('resize', function () {
+                if (document.getElementsByClassName('c_modal01_isShow').length) {
+                    setMaxHeightModal01(document.getElementsByClassName('c_modal01_isShow')[0]);
+                }
+            });
+        });
+    }

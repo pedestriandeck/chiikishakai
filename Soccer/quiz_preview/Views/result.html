@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../quiz_files/p_css/reset.css?20230907">
     <link rel="stylesheet" href="../quiz_files/p_css/common.css?20230907">
     <link rel="stylesheet" href="../quiz_files/p_css/result.css?20230907">
+    <link rel="stylesheet" href="../quiz_files/p_css/preview.css?20230907">
 </head>
 
 <body>
@@ -34,12 +35,40 @@
         <img class="sqc_headerIcon" src="../quiz_files/p_img/soccerball_header.png?20230907">
         <div class="sqc_headerText">
             <p class="sqc_typo_header">Soccer Quiz</p>
-            <p class="sqc_typo_header sqp_typo_header">preview</p>
+            <p class="sqc_typo_header sqp_typo_header">~preview~</p>
         </div>
     </header>
 
     <!-- メイン -->
     <main>
+
+
+        <!-- ポップアップ -->
+        <div class="c_modal01">
+            <div class="c_modal01_showModal"></div>
+            <div class="c_modal01_modal">
+                <div class="c_modal01_inner"><a href="javascript:void(0)" class="c_modal01_CloseBtn"><svg width="48"
+                            height="48" viewbox="0 0 48 48" fill="none">
+                            <g clip-path="url(#clip0_39240_3010)">
+                                <path
+                                    d="M24 42C33.9411 42 42 33.9411 42 24C42 14.0589 33.9411 6 24 6C14.0589 6 6 14.0589 6 24C6 33.9411 14.0589 42 24 42Z"
+                                    fill="#FABF00"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.6349 15.5145C17.0491 14.9287 16.0993 14.9287 15.5136 15.5145C14.9278 16.1003 14.9278 17.0501 15.5136 17.6359L21.8779 24.0002L15.5136 30.3645C14.9278 30.9503 14.9278 31.9001 15.5136 32.4859C16.0993 33.0716 17.0491 33.0716 17.6349 32.4859L23.9992 26.1215L30.3636 32.4859C30.9493 33.0716 31.8991 33.0716 32.4849 32.4859C33.0707 31.9001 33.0707 30.9503 32.4849 30.3645L26.1205 24.0002L32.4849 17.6359C33.0707 17.0501 33.0707 16.1003 32.4849 15.5145C31.8991 14.9287 30.9493 14.9287 30.3636 15.5145L23.9992 21.8789L17.6349 15.5145Z"
+                                    fill="#2E2E2E"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_39240_3010">
+                                    <rect width="48" height="48" fill="white"></rect>
+                                </clipPath>
+                            </defs>
+                        </svg></a>
+                    <div class="c_modal01_textArea">こちらはプレビュー版のため、<br >Q3~10の回答を自動生成しています。</div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="sqr_whiteCover">
             <p id="sqr_message" class="spr_typo_message"></p>
             <div class="sqr_iconArea">
@@ -231,12 +260,12 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="sqr_tableNumArea">
+                                    <div class="sqr_tableNumArea sqr_tableNumArea_bgGrey">
                                         <p class="sqr_typo_tableNum">
                                             Q<span class="sqr_quizNum"></span>
                                         </p>
                                     </div>
-                                    <div class="sqr_tableJudgeArea">
+                                    <div class="sqr_tableJudgeArea sqr_tableJudgeArea_bgGrey">
                                         <div class="sqc_dialog">
                                             <div class="sqc_dialog_showModal">
                                                 <div class="sqr_judgementIconUnderbar">
@@ -317,12 +346,12 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="sqr_tableNumArea">
+                                    <div class="sqr_tableNumArea sqr_tableNumArea_bgGrey">
                                         <p class="sqr_typo_tableNum">
                                             Q<span class="sqr_quizNum"></span>
                                         </p>
                                     </div>
-                                    <div class="sqr_tableJudgeArea">
+                                    <div class="sqr_tableJudgeArea sqr_tableJudgeArea_bgGrey">
                                         <div class="sqc_dialog">
                                             <div class="sqc_dialog_showModal">
                                                 <div class="sqr_judgementIconUnderbar">
@@ -403,12 +432,12 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="sqr_tableNumArea">
+                                    <div class="sqr_tableNumArea sqr_tableNumArea_bgGrey">
                                         <p class="sqr_typo_tableNum">
                                             Q<span class="sqr_quizNum"></span>
                                         </p>
                                     </div>
-                                    <div class="sqr_tableJudgeArea">
+                                    <div class="sqr_tableJudgeArea sqr_tableJudgeArea_bgGrey">
                                         <div class="sqc_dialog">
                                             <div class="sqc_dialog_showModal">
                                                 <div class="sqr_judgementIconUnderbar">
@@ -491,12 +520,12 @@
                             </ul>
                             <ul>
                                 <li>
-                                    <div class="sqr_tableNumArea">
+                                    <div class="sqr_tableNumArea sqr_tableNumArea_bgGrey">
                                         <p class="sqr_typo_tableNum">
                                             Q<span class="sqr_quizNum"></span>
                                         </p>
                                     </div>
-                                    <div class="sqr_tableJudgeArea">
+                                    <div class="sqr_tableJudgeArea sqr_tableJudgeArea_bgGrey">
                                         <div class="sqc_dialog">
                                             <div class="sqc_dialog_showModal">
                                                 <div class="sqr_judgementIconUnderbar">
@@ -577,12 +606,12 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="sqr_tableNumArea">
+                                    <div class="sqr_tableNumArea sqr_tableNumArea_bgGrey">
                                         <p class="sqr_typo_tableNum">
                                             Q<span class="sqr_quizNum"></span>
                                         </p>
                                     </div>
-                                    <div class="sqr_tableJudgeArea">
+                                    <div class="sqr_tableJudgeArea sqr_tableJudgeArea_bgGrey">
                                         <div class="sqc_dialog">
                                             <div class="sqc_dialog_showModal">
                                                 <div class="sqr_judgementIconUnderbar">
@@ -663,12 +692,12 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="sqr_tableNumArea">
+                                    <div class="sqr_tableNumArea sqr_tableNumArea_bgGrey">
                                         <p class="sqr_typo_tableNum">
                                             Q<span class="sqr_quizNum"></span>
                                         </p>
                                     </div>
-                                    <div class="sqr_tableJudgeArea">
+                                    <div class="sqr_tableJudgeArea sqr_tableJudgeArea_bgGrey">
                                         <div class="sqc_dialog">
                                             <div class="sqc_dialog_showModal">
                                                 <div class="sqr_judgementIconUnderbar">
@@ -749,12 +778,12 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="sqr_tableNumArea">
+                                    <div class="sqr_tableNumArea sqr_tableNumArea_bgGrey">
                                         <p class="sqr_typo_tableNum">
                                             Q<span class="sqr_quizNum"></span>
                                         </p>
                                     </div>
-                                    <div class="sqr_tableJudgeArea">
+                                    <div class="sqr_tableJudgeArea sqr_tableJudgeArea_bgGrey">
                                         <div class="sqc_dialog">
                                             <div class="sqc_dialog_showModal">
                                                 <div class="sqr_judgementIconUnderbar">
@@ -835,12 +864,12 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="sqr_tableNumArea">
+                                    <div class="sqr_tableNumArea sqr_tableNumArea_bgGrey">
                                         <p class="sqr_typo_tableNum">
                                             Q<span class="sqr_quizNum"></span>
                                         </p>
                                     </div>
-                                    <div class="sqr_tableJudgeArea">
+                                    <div class="sqr_tableJudgeArea sqr_tableJudgeArea_bgGrey">
                                         <div class="sqc_dialog">
                                             <div class="sqc_dialog_showModal">
                                                 <div class="sqr_judgementIconUnderbar">
