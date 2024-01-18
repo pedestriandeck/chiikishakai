@@ -251,18 +251,18 @@ main {
 }
 
 /* コンポーネント：Dialog */
-.c_modal01,
+.sqr_modal01,
 .c_dialog02 {
     display: flex;
 }
 
-.c_modal01_showModal,
+.sqr_modal01_showModal,
 .c_dialog02_showModal {
     cursor: pointer;
 }
 
 /* ダイアログ背景 */
-.c_modal01_modal,
+.sqr_modal01_modal,
 .c_dialog02_modal {
     visibility: hidden;
     opacity: 0;
@@ -281,10 +281,10 @@ main {
     z-index: 10;
 }
 
-.c_modal01_inner {
+.sqr_modal01_inner {
     background-color: #FFFFFF;
     border-radius: 24px;
-    /* スクロールの調整のため右・下paddingをc_modal01_textAreaと分割 */
+    /* スクロールの調整のため右・下paddingをsqr_modal01_textAreaと分割 */
     padding: 32px 12px 30px 0;
     width: 90vw;
     max-width: 592px;
@@ -297,30 +297,30 @@ main {
 
 /* PC表示 */
 @media (min-width: 760px) {
-    .c_modal01_inner {
+    .sqr_modal01_inner {
         max-height: 680px;
     }
 }
 
 /* ダイアログテキストエリア */
-.c_modal01_textArea {
+.sqr_modal01_textArea {
     overflow-y: auto;
     overflow-x: hidden;
     line-height: 1.5;
-    /*モーダル内スクロールの調整のため右・下paddingをc_modal01_innerと分割 */
+    /*モーダル内スクロールの調整のため右・下paddingをsqr_modal01_innerと分割 */
     padding: 0 12px 2px 24px;
 }
 
 /* PC表示 */
 @media (min-width: 760px) {
-    .c_modal01_textArea {
+    .sqr_modal01_textArea {
         /* ダイアログボックスの最大の高さ（680px）からパディング要素（64px）を引いた値 */
         max-height: 616px;
     }
 }
 
 /* 閉じるアイコン（×ボタン） */
-.c_modal01_CloseBtn,
+.sqr_modal01_CloseBtn,
 .c_dialog02_CloseBtn,
 .c_cfmDialog_CloseBtn {
     position: absolute;
@@ -332,7 +332,7 @@ main {
 }
 
 /* ダイアログ表示用クラス */
-.c_modal01_isShow,
+.sqr_modal01_isShow,
 .c_dialog02_isShow,
 .c_cfmDialog_isShow .c_cfmDialog_modal {
     visibility: visible;
@@ -340,14 +340,14 @@ main {
 }
 
 /* ×ボタンクローズ非表示用クラス */
-.c_modal01_hidden_closeBtn>.c_modal01_modal>.c_modal01_inner>.c_modal01_CloseBtn,
+.sqr_modal01_hidden_closeBtn>.sqr_modal01_modal>.sqr_modal01_inner>.sqr_modal01_CloseBtn,
 .c_dialog02_hidden_closeBtn>.c_dialog02_modal>.c_dialog02_inner>.c_dialog02_CloseBtn,
 .c_cfmDialog_hidden_closeBtn .c_cfmDialog_CloseBtn {
     display: none;
 }
 
 /* 背景押下制御用クラス */
-.c_modal01 .c_modal01_modal_disable,
+.sqr_modal01 .sqr_modal01_modal_disable,
 .c_dialog02 .c_dialog02_modal_disable,
 .c_cfmDialog .c_cfmDialog_modal_disable {
     cursor: default;

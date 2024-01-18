@@ -196,7 +196,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     /** コンポーネント：Dialog **/
     // フォントサイズ取り込み
-    if (!document.getElementsByClassName('c_modal01').length) {
+    if (!document.getElementsByClassName('sqr_modal01').length) {
         //該当の要素がない場合は処理を行なわない
     } else {
 
@@ -208,7 +208,7 @@ window.addEventListener('DOMContentLoaded', function () {
         // ダイアログ表示処理
         function showModalDialog01(targetDialogArea) {
             // ダイアログウィンドウ表示
-            targetDialogArea.classList.add('c_modal01_isShow');
+            targetDialogArea.classList.add('sqr_modal01_isShow');
             // 背景固定
             setBodyScroll();
             // 高さ設定
@@ -220,13 +220,13 @@ window.addEventListener('DOMContentLoaded', function () {
             // スクロール位置を戻すための処理 
             clearBodyScroll();
             // ダイアログウィンドウ非表示
-            targetDialogArea.classList.remove('c_modal01_isShow');
+            targetDialogArea.classList.remove('sqr_modal01_isShow');
         }
 
         // ダイアログ表示時用 高さ設定処理
         function setMaxHeightModal01(targetDialogArea) {
             const modalMaxHeight = 56;
-            targetArea = targetDialogArea.getElementsByClassName('c_modal01_textArea')[0];
+            targetArea = targetDialogArea.getElementsByClassName('sqr_modal01_textArea')[0];
             let dialogHeight;
             // IEかどうかで取得元を変える
             if (c_isbrowserIE()) {
@@ -253,7 +253,7 @@ window.addEventListener('DOMContentLoaded', function () {
         // ページ表示時に各種イベント登録
         window.addEventListener('DOMContentLoaded', function () {
             // ダイアログウィンドウの表示制御 
-            const showModal = document.getElementsByClassName('c_modal01_showModal');
+            const showModal = document.getElementsByClassName('sqr_modal01_showModal');
             for (let i = 0; i < showModal.length; i++) {
                 // showModal[i].addEventListener('click', function () {
                     showModalDialog01(showModal[i].nextElementSibling);
@@ -261,7 +261,7 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
             // ダイアログウィンドウの非表示制御（×ボタン押下時）
-            const closeBtn = document.getElementsByClassName('c_modal01_CloseBtn');
+            const closeBtn = document.getElementsByClassName('sqr_modal01_CloseBtn');
             for (let i = 0; i < closeBtn.length; i++) {
                 closeBtn[i].addEventListener('click', function (e) {
                     e.stopPropagation();
@@ -270,14 +270,14 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
             // ダイアログウィンドウの非表示制御（背景押下時）
-            const closeModal = document.getElementsByClassName('c_modal01_modal');
+            const closeModal = document.getElementsByClassName('sqr_modal01_modal');
             for (let i = 0; i < closeModal.length; i++) {
                 closeModal[i].addEventListener('click', function (e) {
                     e.stopPropagation();
                     // IEの場合、×ボタン押下時にdiv要素全体の押下イベントも実行されてしまうため×ボタン押下か否かを判定
                     if (undefined != e.target.classList) {
                         // 押下箇所が背景の場合 かつ 非活性制御がない場合はダイアログを閉じる
-                        if (e.target.classList.contains('c_modal01_modal') && !(e.target.classList.contains('c_modal01_modal_disable'))) {
+                        if (e.target.classList.contains('sqr_modal01_modal') && !(e.target.classList.contains('sqr_modal01_modal_disable'))) {
                             closeModalDialog01(this);
                         }
                     }
@@ -286,8 +286,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
             // リサイズ時 高さ再設定
             window.addEventListener('resize', function () {
-                if (document.getElementsByClassName('c_modal01_isShow').length) {
-                    setMaxHeightModal01(document.getElementsByClassName('c_modal01_isShow')[0]);
+                if (document.getElementsByClassName('sqr_modal01_isShow').length) {
+                    setMaxHeightModal01(document.getElementsByClassName('sqr_modal01_isShow')[0]);
                 }
             });
         });
