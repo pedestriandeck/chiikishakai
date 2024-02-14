@@ -38,7 +38,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // ユーザテーブルの最後のレコードを取得
     userTable.orderBy('id').last(function (record) {
-        console.log(userTable)
         // 正解数の格納
         point = record.Point + 5;
         // ログスプレッドシートのウェブアプリURLを設定
@@ -63,7 +62,6 @@ window.addEventListener('DOMContentLoaded', function () {
                 option[(quiz.QuizId - 1) * 4 + (quiz.Answer - 1)].classList.add('sqr_correctOption');
                 // 正誤判定
                 if (record.Choice[quiz.QuizId - 1] == quiz.Answer) {
-                    console.log(record.Choice[quiz.QuizId - 1])
                     // 正解の場合
                     // 正解アイコンの表示
                     correctIcon[quiz.QuizId - 1].classList.add('sqr_showJudgeIcon');
