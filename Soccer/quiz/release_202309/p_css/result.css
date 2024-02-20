@@ -1,0 +1,233 @@
+/* 結果画面 */
+main {
+    padding: 24px 20px;
+}
+
+.sqr_whiteCover {
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.spr_typo_message {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #2E2E2E;
+    text-align: center;
+}
+
+.sqr_iconArea {
+    height: 100px;
+}
+
+.sqr_iconArea>img {
+    display: none;
+    margin: 0 auto;
+}
+
+.sqr_iconArea>.sqr_showMascotIcon {
+    display: block;
+}
+
+.sqr_tableFrame {
+    padding: 16px;
+    border: 3px solid #FABF00;
+    border-radius: 24px;
+    background-color: #FFFFFF;
+}
+
+.sqr_typo_numOfCorrects {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #2E2E2E;
+    text-align: center;
+}
+
+/* テーブルエリア */
+.sqr_tableArea {
+    padding-top: 16px;
+}
+
+.sqr_judgementTable {
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.sqr_judgementTable>ul {
+    flex-grow: 1;
+}
+
+.sqr_judgementTable li {
+    display: flex;
+}
+
+.sqr_judgementTable li>div {
+    flex-grow: 1;
+    width: 50%;
+}
+
+.sqr_tableNumArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-right: 2px solid #FABF00;
+    background-color: #FCDF7F;
+}
+
+.sqr_typo_tableNum {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #2E2E2E;
+}
+
+.sqr_tableJudgeArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FEF2CC;
+}
+
+.sqr_judgementTable>ul:first-child .sqr_tableJudgeArea {
+    border-right: 2px solid #FABF00;
+}
+
+.sqr_judgementTable>ul>li:not(:first-child) {
+    border-top: 2px solid #FABF00;
+}
+
+.sqr_judgementIconUnderbar {
+    padding: 4px;
+    border-bottom: 1px solid #585858;
+}
+
+.sqr_correctIcon, .sqr_incorrectIcon {
+    display: none;
+    width: 16px;
+    height: 16px;
+}
+
+.sqr_showJudgeIcon {
+    display: block;
+}
+
+/* ダイアログ内の要素 */
+.sqr_statementArea {
+    display: flex;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.sqr_numberArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background-color: #FABF00;
+}
+
+.sqr_typo_number {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #2E2E2E;
+}
+
+.sqr_statement {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 8px;
+}
+
+.sqr_typo_statement {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #2E2E2E;
+}
+
+.sqr_optionArea {
+    padding: 48px 12px 0 12px;
+}
+
+.sqr_optionArea>li:not(:first-child) {
+    padding-top: 16px;
+}
+
+.sqr_optionArea>li:last-child {
+    padding-bottom: 4px;
+}
+
+.sqr_option {
+    padding: 8px 20px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #FFECB2;
+}
+
+.sqr_correctOption {
+    background-color: #F29F00;
+}
+
+.sqr_typo_optionText {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #2E2E2E;
+}
+
+.sqr_tagArea {
+    padding-top: 4px;
+}
+
+.sqr_typo_tag {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #F23737;
+}
+
+/* ランキングエリア */
+.sqr_rankingArea {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding-top: 16px;
+}
+
+.sqr_rankTextSpace {
+    padding-left: 8px;
+}
+
+.sql_typo_rankText {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #2E2E2E;
+}
+
+.sql_typo_rankNum {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #2E2E2E;
+}
+
+/* ノーティフィケーションエリア */
+.sqr_adviceArea {
+    padding-top: 16px;
+}
+
+.sqr_typo_advice {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #2E2E2E;
+}

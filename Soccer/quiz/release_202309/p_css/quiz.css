@@ -1,0 +1,142 @@
+/* クイズ画面 */
+/* ○×アイコン透過 */
+.sqq_transmission {
+    opacity: 0;
+    transition: opacity 600ms;
+}
+
+/* display */
+.sqq_none {
+    display: none;
+}
+
+/* プログレスバー */
+.sqq_progressBarArea {
+    padding: 16px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* クイズエリア */
+/* 問題文エリア */
+.sqq_quizArea {
+    padding: 24px 20px;
+}
+
+.sqq_problemArea {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px 12px;
+}
+
+.sqq_numberArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background-color: #FABF00;
+}
+
+.sqq_numberTypo {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #2E2E2E;
+}
+
+.sqq_statementArea {
+    background-color: #FFFFFF;
+    display: flex;
+    border-radius: 16px;
+    height: 64px;
+}
+
+.sqq_statement {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 8px;
+}
+
+.sqq_statementTypo {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #2E2E2E;
+}
+
+/* 写真エリア */
+
+.sqq_picture {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 24px;
+    padding: 0 12px;
+}
+
+/* 静誤判定エリア */
+.sqq_judgeArea {
+    position: relative;
+}
+
+.sqq_judgeSVG {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 選択肢エリア */
+.sqq_choiceArea {
+    padding: 24px 12px 0 12px;
+}
+
+.sqq_noClick {
+    pointer-events: none;
+}
+
+.sqq_choiceArea>li:not(:first-child) {
+    margin-top: 16px;
+}
+
+.sqq_choiceArea label {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #FFECB2;
+    transition: .1s;
+    cursor: pointer;
+    height: 64px;
+    padding: 8px 20px 16px 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.sqq_choiceArea input {
+    display: none;
+}
+
+/* .sqq_choiceArea input[type="radio"]:checked+label {
+    background-color: #F29F00;
+} */
+
+.sqq_choiceOrange+label {
+    background-color: #F29F00;
+}
+
+.sqq_choiceGray+label {
+    background-color:#C4C4C4;
+}
+
+.sqq_choiceTypo {
+    color: #000000;
+    font-size: 14px;
+    font-family: Noto Sans JP;
+    font-weight: 700;
+    line-height: 20px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-align: left;
+}
